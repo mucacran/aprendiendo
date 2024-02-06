@@ -1,0 +1,12 @@
+
+
+<div [ngStyle] = "{'background': color }">
+    <p>me gusta el color {{color}}</p>
+    <p [ngStyle] = "{'background': colorHex() }">
+        Pero tambien los colores aleatorios 
+        <app-saludo
+            [varNombre] = "color"
+            [edad] = "sumadeDosNumero()"
+        />
+    </p>
+</div>
