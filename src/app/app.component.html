@@ -8,10 +8,14 @@
             </div>
         </div>
         <div class="col">
-            <div class="card p-5" *ngIf="valor2">
+            <div class="card p-5" *ngIf="valor2; else otroCard">
                 <h1>{{title}} Dos</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>
             </div>
+            <ng-template #otroCard>
+                <h1>{{title}} Tres</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>            
+            </ng-template>
         </div>
     </div>
 </div>
