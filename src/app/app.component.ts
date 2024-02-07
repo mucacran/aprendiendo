@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Aprendiendo mucho';
-
-
+  valor1: boolean = false;
+  valor2!: boolean;
 }

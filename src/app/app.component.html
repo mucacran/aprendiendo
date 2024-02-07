@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col">
-            <div class="card p-5" >
+            <div class="card p-5" *ngIf="valor2">
                 <h1>{{title}} Dos</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>
             </div>
@@ -17,6 +17,9 @@
 </div>
 
 <div class="container">
-    <button class="btn btn-primary" (click)="valor1:boolean =true">boton uno</button>
-    <button class="btn btn-danger">boton Dos</button>
+    <button class="btn btn-primary" (click)="valor1 = true">boton uno</button>
+    <button class="btn btn-danger" (click)="valor2 = !valor2">boton Dos</button>
 </div>
+
+<p>valor1 = {{valor1}}</p>
+<p>valor2 = {{valor2}}</p>
