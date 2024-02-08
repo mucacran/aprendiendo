@@ -8,22 +8,33 @@
             </div>
         </div>
         <div class="col">
-            <div class="card p-5" *ngIf="valor2; else otroCard">
-                <h1>{{title}} Dos</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>
-            </div>
-            <ng-template #otroCard>
-                <h1>{{title}} Tres</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>            
+            <ng-container *ngIf="valor2; else otroCard">
+                <div class="card p-5">
+                    <h1>{{title}} Dos</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>
+                </div>
+            </ng-container>
+            
+            <ng-template #otroCard >
+                <div class="card p-5">
+                    <h1>{{title}} Tres</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate hic temporibus necessitatibus quis voluptatibus ducimus consectetur, accusamus excepturi commodi velit quibusdam explicabo, quisquam provident voluptatem, deleniti sunt? Sunt, repudiandae ipsam.</p>            
+                </div>
             </ng-template>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <button class="btn btn-primary" (click)="valor1 = true">boton uno</button>
+    <button class="btn btn-primary me-3" (click)="valor1 = true">boton uno</button>
     <button class="btn btn-danger" (click)="valor2 = !valor2">boton Dos</button>
+    <br>
+    <div class="row">
+        <div class="col">
+            <p>valor1 = {{valor1}}</p>
+            <p>valor2 = {{valor2}}</p>
+        </div>
+    </div>
 </div>
 
-<p>valor1 = {{valor1}}</p>
-<p>valor2 = {{valor2}}</p>
+
