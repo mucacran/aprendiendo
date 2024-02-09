@@ -1,1 +1,12 @@
-<h1>Sergio</h1>
+<div class="container">
+        <h1>Sergio</h1>
+    <div [ngSwitch]="DiadelaSemana">
+        <p class="item" *ngSwitchCase="'lunes'">Texto</p>
+        <p class="item" *ngSwitchDefaulte="'lunes'">Texto</p>
+    </div>
+</div>
+
+
+<div class="container">
+    <input type="text" [(ngModel)]="DiadelaSemana"/>
+</div>
