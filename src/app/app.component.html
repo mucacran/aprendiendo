@@ -1,17 +1,15 @@
-<div class="container">
-    <h1>Sergio - Organizador de Tareas</h1>
-    <div [ngSwitch]="DiadelaSemana">
-        <p class="item" *ngSwitchCase="'13'">---- 13 ----</p>
-        <p class="item" *ngSwitchCase="'lunes'">Tomar chocolate caliente</p>
-        <p class="item" *ngSwitchCase="'martes'">Ser el mejor</p>
-        <p class="item" *ngSwitchCase="'miercoles'">Trabajt BYUi</p>
-        <p class="item" *ngSwitchCase="'jueves'">Pensar en el viernes</p>
-        <p class="item" *ngSwitchCase="'viernes'">Ya no pensar en nada</p>
-        <p class="item" *ngSwitchDefault>Ealige un día la semanao para conocer tu destinoTexto</p>
-    </div>
+
+<div class="container mb-5"><h1>Estilo</h1>
+    <div class="card p-5" [ngStyle]="{'color':coolor ? coolor:'peru'}">Añade un diferente color de texto</div>
+
+
+<hr>
+
+    <button  (click)="coolor = 'red'" [ngClass]="{'activo':coolor == 'red'}">Azul</button>
+    <button  (click)="coolor = 'green'" [ngClass]="coolor">Verde</button>
+
 </div>
 
-
 <div class="container">
-    <input type="text" [(ngModel)]="DiadelaSemana"/>
+
 </div>

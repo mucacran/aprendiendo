@@ -11,5 +11,5 @@ export class AppComponent {
   valor2!: boolean;
 
   DiadelaSemana!: String; // Definir la propiedad DiadelaSemana como un número
-
+  coolor!:string;
 }
