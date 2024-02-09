@@ -9,4 +9,7 @@ export class AppComponent {
   title = 'Aprendiendo mucho';
   valor1: boolean = false;
   valor2!: boolean;
+
+  DiadelaSemana!: String; // Definir la propiedad DiadelaSemana como un número
+
 }
