@@ -1,3 +1,26 @@
-<ul>
-    <li class="" *ngFor="let i of libros">Libro: {{i.titulo}}</li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <ul [ngClass]="'list-group list-group-flush'">
+                    <li class="list-group-item"
+                        *ngFor="let i of libros;
+                        index as indice;
+                        first as esPrimero;
+                        last as esUltimo;
+                        odd as esPar;
+                        even as esInpar;
+                        "
+                        >
+                        <span *ngIf="indice < 5" class="badge text-bg-info">{{indice+1}}</span>
+                        Libro: {{i.titulo}}
+                        <span *ngIf="esPrimero" class="badge text-bg-success ms-1">Vendido</span>
+                        <span *ngIf="esUltimo" class="badge text-bg-danger ms-1">Fiado</span>
+                        <span *ngIf="esPar" class="badge text-bg-warning ms-1">En proceso</span>
+                        <span *ngIf="esInpar" class="badge text-bg-dark ms-1">Venta caida</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
