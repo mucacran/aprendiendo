@@ -24,24 +24,17 @@ export class AppComponent {
 
   libros: Libro[] = [];
 
-
-  title = 'Aprendiendo mucho';
-  valor1: boolean = false;
-  valor2!: boolean;
-
-  DiadelaSemana!: String; // Definir la propiedad DiadelaSemana como un número
-  coolor!:string;
-
   constructor(){
     this.libros = [
       { id: 1, titulo: "El señor de los anillos", autor: "J.R.R. Tolkien" },
       { id: 2, titulo: "Cien años de soledad", autor: "Gabriel García Márquez" },
       { id: 3, titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes" },
       { id: 4, titulo: "1984", autor: "George Orwell" }
-/*
-      "uno",
-      "dos",
-      "tres"*/
-    ];
+    ]
+  }
+
+  //el evento
+  mostratAutor(_i:Libro){
+    alert(`${_i.titulo} fué escrito por: ${_i.autor}`);
   }
 }
