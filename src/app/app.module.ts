@@ -10,6 +10,7 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LibrosComponent } from './libros/libros.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InicioComponent } from './inicio/inicio.component';
     CabeceraComponent,
     NosotrosComponent,
     LibrosComponent,
-    InicioComponent
+    InicioComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
