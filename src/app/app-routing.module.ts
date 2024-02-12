@@ -8,9 +8,7 @@ import { Error404Component } from './error404/error404.component';
 const routes: Routes = [
   {
     /********
-    * Esto hace que se agrege una ruta, osea que ahora
-    * podre poner o escribir en el navegador
-    * localhost:4042/nosotros/
+    * 
     * **********/
     path: 'nosotros',
     component: NosotrosComponent,
