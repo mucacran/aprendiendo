@@ -11,6 +11,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LibrosComponent } from './libros/libros.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { Error404Component } from './error404/error404.component';
+import { SaberMasComponent } from './saber-mas/saber-mas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Error404Component } from './error404/error404.component';
     NosotrosComponent,
     LibrosComponent,
     InicioComponent,
-    Error404Component
+    Error404Component,
+    SaberMasComponent
   ],
   imports: [
     BrowserModule,

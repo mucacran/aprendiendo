@@ -4,12 +4,10 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LibrosComponent } from './libros/libros.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { Error404Component } from './error404/error404.component';
+import { SaberMasComponent } from './saber-mas/saber-mas.component';
 
 const routes: Routes = [
   {
-    /********
-    * 
-    * **********/
     path: 'nosotros',
     component: NosotrosComponent,
   }, {
@@ -18,7 +16,13 @@ const routes: Routes = [
      ******************************/
     path: 'libros',
     component: LibrosComponent
-  }, {
+  },{
+    /********************************************
+     * aqui vamos a enviar las rutas dinamicas  *
+     ********************************************/
+    path: 'sabermas/:libroID',
+    component: SaberMasComponent
+  },{
     /***********************
      * ruta de inicio      *
      ***********************/

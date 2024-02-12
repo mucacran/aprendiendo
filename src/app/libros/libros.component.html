@@ -13,7 +13,8 @@
                         ">
                         <span><a href="https://www.google.com/search?q={{i.autor}}" target="_blank">buscar</a></span>
                         Libro: {{i.titulo}}
-                        <a (click)="mostratAutor(i)" class="badge text-bg-primary text-decoration-none">+informacion</a>
+                        <a (click)="mostratAutor(i)" class="badge text-bg-primary text-decoration-none">+informacion</a> | 
+                        <a [routerLink]="['/sabermas', i.id ]" >saber mas ..</a> 
                     </li>
                 </ul>
             </div>
