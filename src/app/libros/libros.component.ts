@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-interface Libro {
+
+export interface Libro {
   id: number;
   titulo: string;
   autor: string;
@@ -12,12 +13,12 @@ interface Libro {
   styleUrl: './libros.component.css'
 })
 export class LibrosComponent {
-//esto no funciono pero luego abajo lo arregle
-  //libros: Array<Object> = [];
-
   libros: Libro[] = [];
 
-  constructor(){
+  constructor() {
+    /******************
+    * Lista de libros *
+    *******************/
     this.libros = [
       { id: 1, titulo: "El señor de los anillos", autor: "J.R.R. Tolkien" },
       { id: 2, titulo: "Cien años de soledad", autor: "Gabriel García Márquez" },
@@ -27,7 +28,16 @@ export class LibrosComponent {
   }
 
   //el evento
-  mostratAutor(_i:Libro){
+  mostratAutor(_i: Libro) {
     alert(`${_i.titulo} fué escrito por: ${_i.autor}`);
   }
+
+  /******************************************
+   * evento que se activa al inicializar    *
+   * este componente : Este se inicialice   *
+   * cuando se muestra la url en el buscador*
+   ******************************************/
+  ngOnInit() {
+  }
+
 }
