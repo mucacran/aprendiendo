@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+
 import {LibrosseleccionadosService} from '../librosseleccionados.service';
 
 
 export interface Libro {
-  id: number;
-  titulo: string;
-  autor: string;
+  id: number,
+  titulo: string,
+  autor: string,
+  descripcion: string
 }
 
 @Component({
@@ -15,18 +18,12 @@ export interface Libro {
   styleUrl: './libros.component.css'
 })
 export class LibrosComponent {
-  libros: Libro[] = [];
+  libros: any;
+  errorHttp = false;
+  cargando: boolean = false;
 
-  constructor( public librosSelec:LibrosseleccionadosService) {
-    /******************
-    * Lista de libros *
-    *******************/
-    this.libros = [
-      { id: 1, titulo: "El señor de los anillos", autor: "J.R.R. Tolkien" },
-      { id: 2, titulo: "Cien años de soledad", autor: "Gabriel García Márquez" },
-      { id: 3, titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes" },
-      { id: 4, titulo: "1984", autor: "George Orwell" }
-    ]
+  constructor(private http: HttpClient, public librosSelec:LibrosseleccionadosService) {
+
   }
 
   //el evento
@@ -35,10 +32,18 @@ export class LibrosComponent {
   }
 
   ngOnInit() {
+    this.cargando = true;
+    this.cargarLista();
   }
 
   agregarLibro(_libro: any){
     this.librosSelec.agregarLibros(_libro);
+  }
+
+  cargarLista() {
+    this.http.get('assets/json/lista-de-libros.json').subscribe(
+      (respuesta) => { this.libros = respuesta; this.cargando = false; },
+    )
   }
 
 }

@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LibrosComponent } from '../libros/libros.component';
 
-interface Libro {
-  id: number;
-  titulo: string;
-  autor: string;
-}
+import { Libro } from '../common/types';
 
 @Component({
   selector: 'app-saber-mas',
