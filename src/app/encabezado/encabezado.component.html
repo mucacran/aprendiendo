@@ -1,0 +1,15 @@
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3 jumbotron">
+        <h1 class="text-body-emphasis">Club de Libros</h1>
+        <button (click)="mostrarLista = !mostrarLista"> <i class="fa-solid fa-house"></i></button>
+        <div class="border border-success rounded text-bg-dark mx-auto" *ngIf="mostrarLista" style="width: 300px;">
+            <h2 class="h5">Mis Libros Revisados</h2>
+            <ul class="list-group list-group-flush" *ngIf="libroSelec.mostrarLibros()">
+                <li class="list-group-item" *ngFor="let libro of libroSelec.mostBook()">{{libro.titulo}}</li>
+            </ul>
+            <ul class="list-group list-group-flush" *ngIf="!libroSelec.mostrarLibros()">
+                <li class="list-group-item">No existe ningun libro revisado</li>
+            </ul>
+        </div>
+    </div>
+  </div>

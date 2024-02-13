@@ -1,20 +1,15 @@
-<div class="container">
-    <div class="row">
-        <div class="col-6">
+<app-encabezado/>
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-auto">
             <div class="card">
                 <ul [ngClass]="'list-group list-group-flush'">
                     <li class="list-group-item"
-                        *ngFor="let i of libros;
-                        index as indice;
-                        first as esPrimero;
-                        last as esUltimo;
-                        odd as esPar;
-                        even as esInpar;
-                        ">
+                        *ngFor="let i of libros;">
                         <span><a href="https://www.google.com/search?q={{i.autor}}" target="_blank">buscar</a></span>
                         Libro: {{i.titulo}}
                         <a (click)="mostratAutor(i)" class="badge text-bg-primary text-decoration-none">+informacion</a> | 
-                        <a [routerLink]="['/sabermas', i.id ]" >saber mas ..</a> 
+                        <a (click)="agregarLibro(i)"  [routerLink]="['/sabermas', i.id ]" >saber mas ..</a> 
                     </li>
                 </ul>
             </div>

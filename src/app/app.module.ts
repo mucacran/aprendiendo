@@ -13,6 +13,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { Error404Component } from './error404/error404.component';
 import { SaberMasComponent } from './saber-mas/saber-mas.component';
 
+import {LibrosseleccionadosService} from './librosseleccionados.service';
+import { EncabezadoComponent } from './encabezado/encabezado.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,8 @@ import { SaberMasComponent } from './saber-mas/saber-mas.component';
     LibrosComponent,
     InicioComponent,
     Error404Component,
-    SaberMasComponent
+    SaberMasComponent,
+    EncabezadoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { SaberMasComponent } from './saber-mas/saber-mas.component';
     //HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    LibrosseleccionadosService
   ],
   bootstrap: [AppComponent]
 })

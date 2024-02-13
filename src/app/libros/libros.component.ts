@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import {LibrosseleccionadosService} from '../librosseleccionados.service';
+
 
 export interface Libro {
   id: number;
@@ -15,7 +17,7 @@ export interface Libro {
 export class LibrosComponent {
   libros: Libro[] = [];
 
-  constructor() {
+  constructor( public librosSelec:LibrosseleccionadosService) {
     /******************
     * Lista de libros *
     *******************/
@@ -32,12 +34,11 @@ export class LibrosComponent {
     alert(`${_i.titulo} fué escrito por: ${_i.autor}`);
   }
 
-  /******************************************
-   * evento que se activa al inicializar    *
-   * este componente : Este se inicialice   *
-   * cuando se muestra la url en el buscador*
-   ******************************************/
   ngOnInit() {
+  }
+
+  agregarLibro(_libro: any){
+    this.librosSelec.agregarLibros(_libro);
   }
 
 }
