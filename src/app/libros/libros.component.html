@@ -12,6 +12,9 @@
                         <a (click)="agregarLibro(i)"  [routerLink]="['/sabermas', i.id ]" >saber mas ..</a> 
                     </li>
                 </ul>
+                <div class="alert alert-warning" *ngIf="errorHttp">
+                    No se puede mostrar la lista.
+                  </div>
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@ export interface Libro {
 })
 export class LibrosComponent {
   libros: any;
-  errorHttp = false;
+  errorHttp: boolean = false;
   cargando: boolean = false;
 
   constructor(private http: HttpClient, public librosSelec:LibrosseleccionadosService) {
@@ -43,6 +43,7 @@ export class LibrosComponent {
   cargarLista() {
     this.http.get('assets/json/lista-de-libros.json').subscribe(
       (respuesta) => { this.libros = respuesta; this.cargando = false; },
+      (respuesta) => { this.errorHttp = true }
     )
   }
 
