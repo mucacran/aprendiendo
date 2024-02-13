@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import {LibrosseleccionadosService} from '../librosseleccionados.service';
+import { LibrosseleccionadosService } from '../librosseleccionados.service';
+
+import { Renderer2 } from '@angular/core';
 
 
 export interface Libro {
@@ -22,7 +24,10 @@ export class LibrosComponent {
   errorHttp: boolean = false;
   cargando: boolean = false;
 
-  constructor(private http: HttpClient, public librosSelec:LibrosseleccionadosService) {
+  antiguo:any;
+
+  constructor(private http: HttpClient, public librosSelec: LibrosseleccionadosService, private renderer: Renderer2) {
+    this.antiguo = null
 
   }
 
@@ -36,7 +41,7 @@ export class LibrosComponent {
     this.cargarLista();
   }
 
-  agregarLibro(_libro: any){
+  agregarLibro(_libro: any) {
     this.librosSelec.agregarLibros(_libro);
   }
 
@@ -45,6 +50,25 @@ export class LibrosComponent {
       (respuesta) => { this.libros = respuesta; this.cargando = false; },
       (respuesta) => { this.errorHttp = true }
     )
+  }
+
+  mostrarActivo(elemento: HTMLElement,/* boton: HTMLElement*/) {
+
+    this.renderer.addClass(elemento, 'bg-success');
+
+      if(this.antiguo){
+          this.renderer.removeClass(this.antiguo, 'bg-success');
+        }
+    /*
+        let nuevoElemento = this.renderer.createElement("span");
+        this.renderer.setProperty(nuevoElemento, "innerHTML" , " ✅ ");
+    
+        this.renderer.appendChild( elemento , nuevoElemento );
+    
+        this.renderer.setAttribute(boton, "value", "A viajar ✈️");
+        this.renderer.removeAttribute(boton, "disabled");
+    */
+        this.antiguo = elemento;
   }
 
 }

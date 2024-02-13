@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+//agregado para ver la solucion
+import { Libro } from '../common/types';
 
 //importando el servicio
 import {LibrosseleccionadosService} from '../librosseleccionados.service';

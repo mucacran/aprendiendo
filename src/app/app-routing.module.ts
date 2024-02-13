@@ -20,7 +20,7 @@ const routes: Routes = [
     /********************************************
      * aqui vamos a enviar las rutas dinamicas  *
      ********************************************/
-    path: 'sabermas/:libroID',
+    path: 'sabermas/:libroId',
     component: SaberMasComponent
   },{
     /***********************

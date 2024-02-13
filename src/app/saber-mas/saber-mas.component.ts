@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Params } from '@angular/router';
 import { LibrosComponent } from '../libros/libros.component';
+//servicio
+import { LibrosseleccionadosService } from '../librosseleccionados.service';
 
 import { Libro } from '../common/types';
 
@@ -8,35 +10,36 @@ import { Libro } from '../common/types';
   selector: 'app-saber-mas',
   templateUrl: './saber-mas.component.html',
   styleUrl: './saber-mas.component.css',
-  /******************************************************
-   * Yo cree un objeto libro desde otro componente y    *
-   * no podia usarlo en este componente                 *
-   * hice la importacion y seguia sin poder usarlo      *
-   * pero al agregar esta linea se arreglo              *
-   * ahora puedo usar las rutas dinamicas               *
-   * para traer información                             *
-   * ****************************************************/
   providers: [LibrosComponent] // Asegúrate de incluirlo aquí si es necesario
 })
 export class SaberMasComponent {
 
   libros: Libro[];
 
-  constructor(private importLibros: LibrosComponent,private rutas: ActivatedRoute){
+
+  constructor(private importLibros: LibrosComponent,private rutas: ActivatedRoute, public librosSelec: LibrosseleccionadosService){
     this.libros = importLibros.libros;
 
   }
 
-  libroID: any;
   libroSeleccionado: any;
+  libroId: any;
 
   ngOnInit(){
-    this.libroID = this.rutas.snapshot.paramMap.get('libroID');
-    this.libroSeleccionado = this.encontrarLibro();
+    this.rutas.params.subscribe(params => {
+      this.libroId = params['libroId'];
+      this.libroSeleccionado = this.encontrarLibro();
+
+      console.log(this.libros + "este sale");
+    });
+
+    /*this.libroId = this.rutas.snapshot.paramMap.get('libroId');
+    this.libroSeleccionado = this.encontrarLibro();*/
   }
 
   encontrarLibro() {
-    return this.libros.filter((libro) => libro.id == this.libroID)[0];
+    console.log(this.libroId)
+    return this.libros.filter((libro) => libro.id == this.libroId)[0];
   }
 
 }
