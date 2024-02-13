@@ -2,6 +2,9 @@
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col-auto">
+            <div *ngIf="cargando" >
+                <div class="glyphicon glyphicon-hourglass"> </div> CARGANDO...
+              </div>
             <div class="card">
                 <ul [ngClass]="'list-group list-group-flush'">
                     <li class="list-group-item"
