@@ -19,7 +19,6 @@ export class SaberMasComponent {
 
   constructor(private importLibros: LibrosComponent,private rutas: ActivatedRoute, public librosSelec: LibrosseleccionadosService){
     this.libros = importLibros.libros;
-
   }
 
   libroSeleccionado: any;
