@@ -5,7 +5,7 @@
             <div class="card">
                 <ul [ngClass]="'list-group list-group-flush'">
                     <li class="list-group-item"
-                        *ngFor="let i of libros;">
+                        *ngFor="let i of libros2;">
                         <span><a href="https://www.google.com/search?q={{i.autor}}" target="_blank">buscar</a></span>
                         Libro: {{i.titulo}}
                         <a (click)="mostratAutor(i)" class="badge text-bg-primary text-decoration-none">+informacion</a> | 

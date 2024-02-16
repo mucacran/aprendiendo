@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+
 import {LibrosseleccionadosService} from '../librosseleccionados.service';
+
 
 
 export interface Libro {
@@ -16,8 +19,9 @@ export interface Libro {
 })
 export class LibrosComponent {
   libros: Libro[] = [];
+  libros2: any;
 
-  constructor( public librosSelec:LibrosseleccionadosService) {
+  constructor( public librosSelec:LibrosseleccionadosService, private http:HttpClient) {
     /******************
     * Lista de libros *
     *******************/
@@ -35,10 +39,17 @@ export class LibrosComponent {
   }
 
   ngOnInit() {
+    this.cargarLista();
   }
 
   agregarLibro(_libro: any){
     this.librosSelec.agregarLibros(_libro);
+  }
+  
+  cargarLista(){
+    this.http.get('../../assets/json/lista-de-libros.json').subscribe(
+      (respuesta) => {this.libros2 = respuesta;}
+    )
   }
 
 }
