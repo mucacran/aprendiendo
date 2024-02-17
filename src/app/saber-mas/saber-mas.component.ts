@@ -23,9 +23,10 @@ interface Libro {
 export class SaberMasComponent {
   //libros: Libro[];
   libros2SM:any;
+  //libros2SM: any[] = [];
 
   libroID: any;
-  libroSeleccionado: any;
+  libroSeleccionado?: any;
 
   constructor(
     private importLibros: LibrosComponent,
