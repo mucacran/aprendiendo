@@ -4,11 +4,12 @@
         <img src="https://miro.medium.com/v2/resize:fit:400/1*onZhQJU7A3ab6V1sHfMRkQ.jpeg" alt="" class="bi me-2 img-fluid" width="40" height="32">
         <span class="fs-4">Simple header</span>
       </a>
-
+      
+      
       <ul class="nav nav-pills">
-        <li class="nav-item"><a [routerLink]="['/']" class="nav-link active" aria-current="page">Inicio</a></li>
-        <li class="nav-item"><a [routerLink]="['/nosotros']" class="nav-link">Nosotro</a></li>
-        <li class="nav-item"><a [routerLink]="['/libros']" class="nav-link">Libros</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/nosotros']" class="nav-link">Nosotro</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/libros']" class="nav-link">Libros</a></li>
       </ul>
     </header>
   </div>
